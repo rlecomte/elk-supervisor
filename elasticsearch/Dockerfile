@@ -1,4 +1,4 @@
-FROM localhost:5000/java8jre:jre8u31
+FROM tortax/java8jre:jre8u31
 
 ENV ELASTICSEARCH_VERSION 1.4.4
 ENV KIBANA_VERSION 4.0.0
