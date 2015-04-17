@@ -1,0 +1,9 @@
+#!/bin/sh
+
+/home/elasticsearch/bin/elasticsearch & > /dev/null 2>&1
+export ES_PROCESS = $!
+
+#http://stackoverflow.com/questions/1058047/wait-for-any-process-to-finish
+while [[ ( -d /proc/$(ES_PROCESS) ) && ( -z `grep zombie /proc/$(ES_PROCESS)/status` ) ]]; do
+    sleep 1
+done

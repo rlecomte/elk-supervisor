@@ -1,0 +1,3 @@
+#!/bin/sh
+
+kill KIBANA_PROCESS

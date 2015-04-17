@@ -1,3 +1,0 @@
-#!/bin/sh
-
-unset http_proxy && exec /home/kibana/bin/kibana > /dev/null 2>&1

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+/home/kibana/bin/kibana & > /dev/null 2>&1
+export KIBANA_PROCESS = $!
+
+#http://stackoverflow.com/questions/1058047/wait-for-any-process-to-finish
+while [[ ( -d /proc/$(KIBANA_PROCESS) ) && ( -z `grep zombie /proc/$(KIBANA_PROCESS)/status` ) ]]; do
+    sleep 1
+done
