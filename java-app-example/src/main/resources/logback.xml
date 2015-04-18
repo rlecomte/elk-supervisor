@@ -1,0 +1,62 @@
+<configuration>
+
+    <!-- Standard output appender -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{"yyyy-MM-dd'T'HH:mm:ss,SSS"} %-5.5level %-20.20([%thread]) %-37.37logger{36} > %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--
+         File appender :
+            * File name is 'application.log' and it will be generate in 'log/' directory
+            * Rolling policy is apply by day
+            * 7 days history is kept
+    -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>log/application.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>log/application_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{"yyyy-MM-dd'T'HH:mm:ss,SSS"} %-5.5level %-20.20([%thread]) %-37.37logger{36} > %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--
+         Monitoring appender :
+            * File name is 'monitoring.log' and it will be generate in 'log/' directory
+            * Rolling policy is apply by day
+            * 1 day history is kept
+    -->
+    <appender name="MONITORING-LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>log/monitoring.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>log/monitoring_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxHistory>1</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{"yyyy-MM-dd'T'HH:mm:ss,SSS"} %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!--
+        Monitoring logger :
+           * Used to log application's metrics in 'monitoring.log' file
+           * additivity parameter is set to false to prevent logging into root logger
+    -->
+    <logger name="org.rl.monitoring" level="INFO" additivity="false">
+        <appender-ref ref="MONITORING-LOG"/>
+    </logger>
+
+    <!-- By default we sends logs in standard output and file appenders -->
+    <root level="info">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
