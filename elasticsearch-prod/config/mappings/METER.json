@@ -41,31 +41,6 @@
         },
         "@version":{
           "type":"string"
-        },
-        "error":{
-          "type":"long"
-        },
-        "host":{
-          "type":"string"
-        },
-        "module":{
-          "type":"string",
-          "index":"not_analyzed"
-        },
-        "name":{
-          "type":"string"
-        },
-        "success":{
-          "type":"long"
-        },
-        "timeInSecond":{
-          "type":"long"
-        },
-        "total":{
-          "type":"long"
-        },
-        "type":{
-          "type":"string"
         }
       }
     }

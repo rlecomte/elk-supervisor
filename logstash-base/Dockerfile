@@ -11,6 +11,6 @@ RUN wget --no-check-certificate http://download.elasticsearch.org/logstash/logst
 
 VOLUME ["/var/logstash/log/"]
 
-ADD config/metrics.conf /etc/logstash/
-
 ADD service/ /etc/service/
+
+ONBUILD ADD config/metrics.conf /etc/logstash/

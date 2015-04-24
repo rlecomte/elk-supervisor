@@ -13,10 +13,6 @@ RUN wget --no-check-certificate http://download.elasticsearch.org/elasticsearch/
 # Install head plugin
 RUN /home/elasticsearch/bin/plugin --install mobz/elasticsearch-head
 
-# Configure
-ADD config/elasticsearch.yml /home/elasticsearch/config/elasticsearch.yml
-ADD config/mappings/* /home/elasticsearch/config/_default/
-
 # Install Kibana
 RUN wget --no-check-certificate http://download.elasticsearch.org/kibana/kibana/kibana-${KIBANA_VERSION}-linux-x64.tar.gz && \
 	tar -zxf kibana-${KIBANA_VERSION}-linux-x64.tar.gz -C /home && \
@@ -28,3 +24,7 @@ ADD service/ /etc/service/
 
 VOLUME ["/elasticsearch/data", "/elasticsearch/logs"]
 EXPOSE 9200 9300 5601
+
+# Configure on build
+ONBUILD ADD config/elasticsearch.yml /home/elasticsearch/config/elasticsearch.yml
+ONBUILD ADD config/mappings/* /home/elasticsearch/config/_default/
