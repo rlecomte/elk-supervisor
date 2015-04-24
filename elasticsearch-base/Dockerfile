@@ -1,4 +1,4 @@
-FROM tortax/java8jre:jre8u45
+FROM myrepo/java8jre:jre8u45
 
 #version
 ENV ELASTICSEARCH_VERSION 1.4.4

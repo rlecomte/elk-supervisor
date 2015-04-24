@@ -18,10 +18,10 @@ A simple example of java application to supervise is in 'java-app-example'. Log 
 
 ### Process to run it
 
-All steps are details in 'README' at image root folder
-    * build jvm image
-    * build elasticsearch-base image
-    * build elasticsearch-prod image
-    * build logstash-base image
-    * build logstash-prod image
-    * launch java application
+All steps are details in 'README' located in components folders
+* build jvm image
+* build elasticsearch-base image
+* build elasticsearch-prod image
+* build logstash-base image
+* build logstash-prod image
+* launch java application

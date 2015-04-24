@@ -1,3 +1,3 @@
 
 ## Build
-docker build -t tortax/logstash:1.4.2 .
+docker build -t myrepo/logstash:1.4.2 .

@@ -1,1 +1,1 @@
-FROM tortax/elasticsearch:1.4.4
+FROM myrepo/elasticsearch:1.4.4

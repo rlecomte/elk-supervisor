@@ -1,1 +1,1 @@
-FROM tortax/tortax/logstash:1.4.2
+FROM myrepo/logstash:1.4.2

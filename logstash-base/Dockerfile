@@ -1,4 +1,4 @@
-FROM tortax/java8jre:jre8u45
+FROM myrepo/java8jre:jre8u45
 
 # Version
 ENV LOGSTASH_VERSION 1.4.2

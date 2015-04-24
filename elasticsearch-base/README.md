@@ -1,3 +1,3 @@
 
 ## Build
-docker build -t tortax/elasticsearch:1.4.4 .
+docker build -t myrepo/elasticsearch:1.4.4 .

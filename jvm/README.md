@@ -1,3 +1,3 @@
 
 ## Build
-docker build -t tortax/java8jre:jre8u45 .
+docker build -t myrepo/java8jre:jre8u45 .
